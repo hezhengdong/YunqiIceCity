@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Login</title>
+    <link rel="stylesheet" type="text/css" href="userLogin.css" />
+    <link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+  </head>
+  <body>
+    <div class="select">
+      <a href="" class="src1"
+        ><img
+          src="https://hl666888999mm.oss-cn-beijing.aliyuncs.com/yunqiLogo.png"
+        />云启冰城</a
+      >
+      <a href="">品牌介绍</a>
+      <a href="">产品介绍</a>
+      <a href="">个人中心</a>
+      <a href="">热度排行</a>
+    </div>
+    <div class="loginContainer">
+      <form id="loginForm">
+        <div>请输入账号和密码</div>
+        <br />
+        <input
+          type="tel"
+          value="手机号："
+          id="phone"
+          required
+          onfocus="Clear1(this)"
+          onblur="add1(this)"
+        /><br />
+        <div class="iconfont iconfont1">
+          <a href="javascript:void(0)" onclick="shift(this)">&#xe601;</a>
+        </div>
+        <input
+          type="text"
+          id="password"
+          value="密码："
+          required
+          onfocus="Clear(this)"
+          onblur="add(this)"
+        />
+        <br />
+
+        <a href="#" id="forgotPassword">忘记密码？</a><br />
+
+        <button type="submit" class="loginIn">登录</button>
+        <button class="quit" onclick="logout()">退出</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    function Clear(password) {
+      if (password.value == "密码：") {
+        password.value = "";
+        password.type = "password";
+      }
+    }
+    function Clear1(phone) {
+      if (phone.value == "手机号：") {
+        phone.value = "";
+      }
+    }
+    function add(password) {
+      if (password.value == "") {
+        password.type = "text";
+        password.value = "密码：";
+      }
+    }
+    function add1(phone) {
+      if (phone.value == "") {
+        phone.value = "手机号：";
+      }
+    }
+    var flag = 0;
+    function shift(eye) {
+      let Switch = document.getElementById("password");
+      if (flag == 0) {
+        eye.innerHTML = "&#xe6a7;";
+        Switch.type = "text";
+        flag = 1;
+      } else {
+        eye.innerHTML = "&#xe601;";
+        Switch.type = "password";
+        flag = 0;
+      }
+    }
+    document
+      .getElementById("loginForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // 阻止表单默认提交行为
+
+        // 获取表单数据
+        const username = document.getElementById("phone").value;
+        const password = document.getElementById("password").value;
+
+        // 创建XMLHttpRequest对象
+        const xhr = new XMLHttpRequest();
+
+        // 设置请求方法和URL
+        xhr.open("POST", "/userLoginServlet", true);
+
+        // 设置请求头，通常登录需要设置Content-Type为application/x-www-form-urlencoded
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+
+        // 定义请求成功时的回调函数
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            // 请求成功
+            // 这里处理后端返回的数据，可能是JSON格式
+            const response = JSON.parse(xhr.responseText);
+            if (response.success) {
+              alert("登录成功！");
+              // 这里可以执行登录成功后的操作，比如跳转到其他页面
+            } else {
+              alert("登录失败：" + response.message);
+              // 这里可以处理登录失败的情况
+            }
+          } else {
+            // 处理请求错误的情况
+            alert("请求失败，状态码：" + xhr.status);
+          }
+        };
+
+        // 定义请求错误时的回调函数
+        xhr.onerror = function () {
+          alert("网络错误或请求失败！");
+        };
+
+        // 发送请求，将手机号和密码以查询字符串的形式发送
+        xhr.send(
+          "username=" +
+            encodeURIComponent(username) +
+            "&password=" +
+            encodeURIComponent(password)
+        );
+      });
+
+    function logout() {
+      alert("用户已退出登录");
+    }
+
+    // 绑定“忘记密码？”链接的点击事件，防止页面跳转
+    document
+      .getElementById("forgotPassword")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        alert("请点击“忘记密码？”链接以重置密码。");
+      });
+  </script>
+</html>
