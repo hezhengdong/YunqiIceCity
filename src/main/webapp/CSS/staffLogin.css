@@ -1,0 +1,120 @@
+/*消除密码框默认小眼睛图标*/
+/*消除密码框默认小眼睛图标*/
+input[type="password"]::-ms-reveal {
+  display: none;
+}
+input[type="password"]::-ms-clear {
+  display: none;
+}
+input[type="password"]::-o-clear {
+  display: none;
+}
+body {
+  margin: 0;
+  /* background-color: #ecf0f3; */
+  background-color: rgb(252, 202, 80);
+}
+.select {
+  display: flex;
+  justify-content: space-around;
+  width: 1513px;
+  margin: auto;
+}
+.select a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 78px;
+  font-size: 35px;
+  vertical-align: middle;
+  color: #000;
+}
+.select a:hover {
+  background-color: orange;
+}
+.loginContainer {
+  position: relative;
+  width: 721px;
+  height: 597px;
+  /* background-color: rgb(217, 217, 217); */
+  /* background-color: #ecf0f3; */
+  background-color: rgb(255, 181, 1);
+  margin: auto;
+  margin-top: 60px;
+  border-radius: 60px;
+  display: flex;
+  font-size: 20px;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  /* box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9; */
+}
+.iconfont1 {
+  position: absolute;
+  top: 295px;
+  left: 350px;
+}
+.iconfont1 a {
+  text-decoration: none;
+  color: #000;
+}
+.loginContainer div {
+  margin-left: 24%;
+  font-size: 26px;
+}
+#phone {
+  width: 404px;
+  height: 42px;
+  margin-bottom: 43px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #ecf0f3;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+}
+#password {
+  width: 404px;
+  height: 42px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #ecf0f3;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+}
+#forgotPassword {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 12px;
+  color: rgb(112, 113, 121);
+  margin-bottom: 39px;
+}
+.loginIn {
+  width: 139px;
+  height: 63px;
+  /* background-color: rgb(11, 123, 56); */
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 200%;
+  color: white;
+  font-size: 37px;
+  margin-right: 129px;
+  border-radius: 32px;
+  border: none;
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+}
+.quit {
+  width: 139px;
+  height: 63px;
+  /* background-color: rgb(165, 34, 16); */
+  background: linear-gradient(90deg, #168166, #dcbb14, #c215b4, #dc5555);
+  background-size: 200%;
+  color: white;
+  font-size: 37px;
+  border-radius: 32px;
+  border: none;
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+}
+#loginForm {
+  margin: auto;
+}

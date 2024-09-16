@@ -1,0 +1,176 @@
+.text {
+  width: 100px;
+  height: 100px;
+  background-color: blanchedalmond;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+body {
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  display: none;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 809px;
+  /* height: 100vh; */
+  width: 1536px;
+  /* width: 100%; */
+  list-style: none;
+  background-color: #eee;
+  padding: 0;
+}
+ul li {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: inherit;
+  /* width: 100%; */
+  height: inherit;
+  transition: 0.5s transform ease-in-out;
+  transform: translateX(0%);
+}
+ul li img {
+  height: inherit;
+  width: inherit;
+}
+ul li:nth-child(2) {
+  left: 100%;
+}
+ul li:nth-child(3) {
+  left: 200%;
+}
+ul li:nth-child(2) img {
+  margin-top: -125px;
+  height: 934px;
+}
+ul li:nth-child(4) {
+  left: 300%;
+}
+#mylis .iconfont3 {
+  position: absolute;
+  top: 44%;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  z-index: 20;
+  color: white;
+  cursor: pointer;
+}
+#mylis .iconfont4 {
+  position: absolute;
+  top: 44%;
+  left: 96%;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  z-index: 20;
+  color: white;
+  cursor: pointer;
+}
+#mylis .iconfont4:hover {
+  color: orange;
+}
+#mylis .iconfont3:hover {
+  color: orange;
+}
+.select {
+  position: absolute;
+  top: 10px;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  width: 1513px;
+  height: 80px;
+}
+.select a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 78px;
+  font-size: 35px;
+  vertical-align: middle;
+  color: #000;
+}
+.select a:hover {
+  background-color: orange;
+}
+.shift {
+  position: absolute;
+  left: 46%;
+  bottom: 12px;
+}
+.shift div {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.shift div:nth-child(1) {
+  background-color: black;
+}
+.wave {
+  /* display: none; */
+  position: relative;
+  height: 809px;
+  width: 1536px;
+  margin: 0 auto;
+}
+.wave div {
+  position: absolute;
+  width: inherit;
+  height: 192px;
+  margin: 0 auto;
+}
+.logo {
+  display: none;
+  position: absolute;
+  left: 41%;
+  top: 161px;
+}
+.wave div:nth-child(1) {
+  display: none;
+  bottom: 140px;
+  overflow: hidden;
+  background: url(https://hl666888999mm.oss-cn-beijing.aliyuncs.com/Vector%203.png)
+    repeat-x;
+  background-size: 1521px;
+  animation: weave 2s linear infinite;
+}
+.wave div:nth-child(2) {
+  display: none;
+  bottom: 40px;
+  overflow: hidden;
+  background: url(https://hl666888999mm.oss-cn-beijing.aliyuncs.com/Vector%202.png)
+    repeat-x;
+  background-size: 1521px;
+  animation: weave 3s linear infinite;
+}
+.wave div:nth-child(3) {
+  display: none;
+  bottom: 0px;
+  overflow: hidden;
+  background: url(https://hl666888999mm.oss-cn-beijing.aliyuncs.com/vector%201.png)
+    repeat-x;
+  background-size: 1521px;
+  animation: weave 4s linear infinite;
+  background-position: center bottom;
+}
+@keyframes weave {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -1521px;
+  }
+}
